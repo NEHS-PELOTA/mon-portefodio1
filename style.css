@@ -1,0 +1,217 @@
+/* ===== Réglages de base ===== */
+* {
+  margin: 0;              /* enlève les marges par défaut */
+  padding: 0;
+  box-sizing: border-box; /* la largeur inclut le padding et la bordure */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #0f3386;  /* bleu foncé */
+  color: white;
+  min-height: 85vh;          /* au moins la hauteur de l'écran */
+      background-image: linear-gradient(rgba(15, 51, 134, 0.35), rgba(15, 51, 134, 0.35)), url("image2.jpeg");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+    /* Transparence : plus la dernière valeur (0.5) est petite, plus c'est transparent */
+    section { background-color: rgba(17, 37, 90, 0.5); }
+    nav { background: linear-gradient(180deg, rgba(30, 111, 224, 0.6), rgba(10, 26, 63, 0.6)); }
+    /* Les rectangles du menu se répartissent sur toute la hauteur du côté (ordinateur) */
+    @media (min-width: 701px) {
+      nav a {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+/* ===== Titre en haut ===== */
+header {
+  text-align: center;
+  padding: 50px;
+  border-bottom: 1px solid #01193a;
+}
+
+/* ===== Page = menu + contenu côte à côte ===== */
+.page {
+  display: flex;              /* met les enfants sur une ligne */
+  min-height: calc(100vh - 100px);
+}
+
+/* ===== Menu à gauche (bleu dégradé) ===== */
+nav {
+  width: 220px;
+  padding: 25px 15px;
+  display: flex;
+  flex-direction: column;     /* les boutons les uns sous les autres */
+  gap: 15px;                  /* espace entre les boutons */
+  background: linear-gradient(180deg, #1e6fe0, #0a1a3f);
+}
+
+nav a {
+  display: block;
+  padding: 18px;
+  text-align: center;
+  color: white;
+  text-decoration: none;      /* enlève le soulignement */
+  border: 2px solid white;
+  border-radius: 8px;         /* coins arrondis */
+}
+
+nav a:hover {                 /* quand la souris passe dessus */
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+nav a.active {                /* le bouton de la section affichée est en bleu */
+  background-color: #1e6fe0;
+}
+
+/* ===== Contenu à droite ===== */
+main {
+  flex: 1;                    /* prend tout l'espace restant */
+  padding: 30px;
+}
+
+section {
+  display: none;              /* toutes les sections sont cachées au départ */
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 25px;
+  border: 2px solid #1e6fe0;
+  border-radius: 12px;
+  background-color: #11255a;
+}
+
+/* La section qui a la classe "active" (ajoutée par le JavaScript) s'affiche */
+section.active {
+  display: block;
+}
+
+/* Toutes les sections sont centrées, sauf le profil */
+section:not(#profil) {
+  text-align: center;
+}
+
+h2 {
+  color: #4da3ff;
+  margin-bottom: 15px;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  padding: 6px 0;
+}
+
+a {
+  color: #4da3ff;
+}
+
+/* ===== Profil ===== */
+.profil-haut {
+  display: flex;              /* photo et bulle côte à côte */
+  align-items: center;        /* centrés verticalement */
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+/* Carte de citation façon publication Facebook */
+.citation {
+  background: linear-gradient(135deg, #050d24, #0a1a3f);
+  border-radius: 14px;
+  padding: 20px 25px;
+  max-width: 380px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.guillemet {                  /* gros guillemet en haut */
+  display: block;
+  font-size: 4rem;
+  font-weight: bold;
+  line-height: 0.8;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.texte-citation {
+  font-weight: bold;
+  text-transform: uppercase;  /* tout en majuscules */
+  font-size: 1rem;
+  line-height: 1.4;
+  color: white;
+}
+
+.auteur {                     /* la signature en rouge */
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 0.90rem;
+  text-transform: none;
+  color: white;
+}
+
+.photo {
+  width: 220px;
+  height: 220px;
+  border-radius: 100%;         /* photo ronde */
+  object-fit: contain 90%;
+  border: 3px solid #4da3ff;
+  margin-bottom: 15px;
+}
+
+
+
+/* ===== Expérience en 2 colonnes ===== */
+.blocs {
+  display: flex;
+  flex-wrap: wrap;            /* passe à la ligne si pas assez de place */
+  justify-content: center;
+  gap: 30px;
+}
+
+.bloc h3 {
+  color: white;
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid #4da3ff;
+}
+
+/* ===== Petit écran (téléphone) : le menu passe en haut ===== */
+@media (max-width: 700px) {
+  .page {
+    flex-direction: column;
+  }
+  nav {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  nav a {
+    padding: 10px 14px;
+  }
+  main {
+    padding: 15px;
+  }
+  .blocs {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .profil-haut {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .photo {
+    width: 160px;
+    height: 160px;
+  }
+  background-color: lightblue;
+}
+footer{
+  text-align: right;
+  padding: 15px;
+  color: white;
+}
