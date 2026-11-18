@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mon portfolio</title>
+  <!-- On relie le fichier CSS -->
+  <link rel="stylesheet" href="style.css">
+  <!-- AJOUT : image d'arrière-plan du portfolio (fichier fond.jpg) -->
+  <style>
+    body {
+      background-image: linear-gradient(rgba(15, 51, 134, 0.35), rgba(15, 51, 134, 0.35)), url("image2.jpeg");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+    /* Transparence : plus la dernière valeur (0.5) est petite, plus c'est transparent */
+    section { background-color: rgba(17, 37, 90, 0.5); }
+    nav { background: linear-gradient(180deg, rgba(30, 111, 224, 0.6), rgba(10, 26, 63, 0.6)); }
+    /* Les rectangles du menu se répartissent sur toute la hauteur du côté (ordinateur) */
+    @media (min-width: 701px) {
+      nav a {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Titre en haut -->
+  <header>
+    <h1>Mon portfolio</h1>
+  </header>
+
+  <div class="page">
+
+    <!-- Menu vertical à gauche -->
+    <nav>
+      <a href="#profil">👤 Profil</a>
+      <a href="#experience">💻 Expérience</a>
+      <a href="#parcours">🎓 Parcours</a>
+      <a href="#projet">👨‍🔧 Projet</a>
+      <a href="#contact">✉️ Contact</a>
+    </nav>
+
+    <!-- Contenu : une seule section visible à la fois -->
+    <main>
+
+      <section id="profil">
+        <h2>Profil👤</h2>
+
+        <!-- Photo à gauche + bulle de message à droite -->
+        <div class="profil-haut">
+          <img class="photo" src="c:\Users\PC\Desktop\mon-portefodio\image1.jpeg" alt="Ma photo">
+          <div class="citation">
+            <span class="guillemet">”</span>
+            <p class="texte-citation">
+              Passionné par les réseaux et les télécommunications,
+              j'apprends chaque jour pour devenir un bon ingénieur.
+              Bienvenue sur mon portfolio !
+            </p>
+            <p class="auteur"> NDONG EBANG Hermin Stecar</p>
+          </div>
+        </div>
+
+        <ul>
+          <li>Nom : NDONG EBANG</li>
+          <li>Prénom : Hermin Stecar</li>
+          <li>Âge : 22 ans</li>
+          <li>Nationalité: Gabonaise</li>
+          <li>Résidence : Franceville</li>
+          <li>departemnt: ING1-GRT3</li>
+          
+        </ul>
+      </section>
+
+      <section id="experience">
+        <h2>Expérience💻</h2>
+        <div class="blocs">
+
+          <div class="bloc">
+            <h3>Logiciels bureautiques👨‍💻</h3>
+            <ol>
+              <li>Word✔</li>
+              <li>Excel✔</li>
+              <li>PowerPoint✔</li>
+              <li>publisher✔</li>
+            </ol>
+          </div>
+          <div class="bloc">
+            <h3>Langages de programmation👨‍💻</h3>
+            <ol>
+              <li>HTML✔</li>
+              <li>CSS✔</li>
+              <li>JavaScript✔</li>
+              <li>language C++✔</li>
+              <li>language C✔</li>
+              <li>Php✔</li>
+              <li>MYSQL✔</li>
+            </ol>
+          </div>
+
+          <div class="bloc">
+            <h3>logiciel👨‍💻</h3>
+            <ol>
+              <li>Proteus✔</li>
+              <li>Matlab✔</li>
+              <li>Inkscape✔</li>
+              <li>cisco packet tracer✔</li>
+            </ol>
+          </div>
+
+        </div>
+      </section>
+
+      <section id="parcours">
+        <h2>Parcours🎓</h2>
+        <ul>
+          <li>🎓Certificat d'ETUDE Primaires (CEP)</li>
+          <li>🎓Brevet d'Etude du Premier Cycle (BEPC)</li>
+          <li>🎓Baccalauréat 2021-2022</li>
+          <li>🎓Classe Prépa 1 2022-2023</li>
+          <li>🎓Classe Prépa 2 2024-2025</li>
+          <li>🎓Genie Reseaux et Telecommunication-3 2025-2026</li>
+        </ul>
+      </section>
+
+      <section id="projet">
+        <h2>Projet👨‍🔧</h2>
+        <ul>
+          <li>Réalisation d'un Logo✔</li>
+          <li>Deploiement du wifi à la mairie de Franceville✔ </li>
+          <li>Projet aventurier✔</li>
+          <li>Réseau local✔</li>
+        </ul>
+      </section>
+
+      <section id="contact">
+        <h2>Contact✉️</h2>
+        <ul>
+          <li>📦Email : <a href="herminndongebang@email.com">herminndongebang@email.com</a></li>
+          <li>Numero : +24174665629/+24160343910</li>
+          <li>📦WhatsApp : <a href="https://wa.me/24174665629" target="_blank">074665629</a></li>
+        </ul>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- On relie le fichier JavaScript (à la fin du body) -->
+  <script src="script.js"></script>
+  <!-- AJOUT : bouton retour à l'accueil (seule ligne ajoutée) -->
+  <script src="retour-accueil.js"></script>
+  <footer >&copy;2026 NDONG EBANG Hermin Stecar</footer>
+
+</body>
+</html>
